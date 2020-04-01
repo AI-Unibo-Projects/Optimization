@@ -33,7 +33,7 @@ Since Adam is derived from SGD, these operations are perfomed for each training 
 
 ## Amsgrad
 
-In some cases, e.g. for object recognition or machine translation they fail to converge to an optimal solution and are outperformed by SGD with momentum.
+In some cases, e.g. for object recognition or machine translation ADAM fails to converge to an optimal solution and is outperformed by SGD with momentum.
 
 Reddi et al. (2018) formalize this issue and pinpoint the exponential moving average of past squared gradients (v) as a reason for the poor generalization behaviour of adaptive learning rate methods. Recall that the introduction of the exponential average was well-motivated: it should prevent the learning rates to become infinitesimally small as training progresses
 . However, this short-term memory of the gradients becomes an obstacle in other scenarios. 
@@ -74,7 +74,8 @@ This way, AMSGrad results in a non-increasing step size, which avoids the proble
 
 > *theta = theta - alpha * m / (√v_hat + ϵ)*
 
-The key difference of AMSGRAD with ADAM is that it maintains the maximum of all v until the present time step and uses this maximum value for normalizing the running average of the gradient instead of v in ADAM. By doing this, AMSGRAD results in a non-increasing step size and avoids the pitfalls of ADAM. In general, any algorithm that relies on an essentially fixed sized window of past gradients to scale the gradient updates will suffer from this problem.
+The key difference of AMSGRAD with ADAM is that it maintains the maximum of all v until the present time step and uses this maximum value for normalizing the running average of the gradient instead of v in ADAM. By doing this, AMSGRAD results in a non-increasing step size and avoids the pitfalls of ADAM. 
+In general, any algorithm that relies on an essentially fixed sized window of past gradients to scale the gradient updates will suffer from this problem.
 
 The authors observe improved performance compared to Adam on small datasets and on CIFAR-10
 
