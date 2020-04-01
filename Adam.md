@@ -12,6 +12,7 @@ Adaptive Moment Estimation (Adam) is a method that computes adaptive learning ra
 v and Adam also keeps an exponentially decaying average of past gradients m, similar to momentum.  We compute the decaying averages of past and past squared gradients m and v respectively as follows: 
 
 > *m = β1 m + (1 - β1) g*
+
 > *v = β2 v + (1 - β2) |g|^2*
 
 m and v are estimates of the first moment (the mean) and the second moment (the uncentered variance) of the gradients respectively.
@@ -19,6 +20,7 @@ As m and v are initialized as vectors of 0's, the authors of Adam observe that t
 They counteract these biases by computing bias-corrected first and second moment estimates:
 
 > *m_hat = m / (1 - β1^t)*
+
 > *v_hat = v / (1 - β2^t)*
 
 Once estimators are calculated and corrected, the parameters are updated using the following formula:
