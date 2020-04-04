@@ -1,12 +1,3 @@
-## Stochastic Gradient Descent
-The formula used to update the parameters θ is
-**θ = θ - ∇J(θ)**
-* **Gradient Descent** updates the weights θ using the gradient computed in the entire training set once
-* **Stochastic Gradient Descent** updates the weights computing the gradient once for each training sample, performing one update at a time
-    * **Minibatch Gradient Descent** updates the weights computing the gradients for multiple subsets of the training set
-
-The disadvantage of SGD is the fact that updating the parameters frequently produces high fluctuations, complicating the convergence to the exact minimum. Fluctuations also causes the algorithm to continuously overshoot.
-
 ## Adam
 Adaptive Moment Estimation (Adam) is a method that computes adaptive learning rates for each parameter. It stores an exponentially decaying average of past squared gradients 
 v and Adam also keeps an exponentially decaying average of past gradients m, similar to momentum.  We compute the decaying averages of past and past squared gradients m and v respectively as follows: 
