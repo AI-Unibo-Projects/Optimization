@@ -1,2 +1,2 @@
 # Optimization
-A comparison between implementations of different gradient-based optimization algorithms (SGD, Adam etc.) done for Optimization course.
+A comparison between implementations of different gradient-based optimization algorithms (Gradient Descent, Adam and Amsgrad) done for Optimization course.
